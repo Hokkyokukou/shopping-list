@@ -22,3 +22,42 @@
     text-decoration: line-through;
 }
 
+ul {
+    list-style-type: none;
+    background-color: orange;
+    width: 50vh;
+    height: 50vw;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 20px;
+    border: solid black 5px;
+    font-size: 25px;
+}
+
+li {
+    padding: 5px;
+}
+
+body {
+    margin: 0 auto;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+#btn_delete {
+    margin-left: 10px;
+    background-image: linear-gradient(to right, rgb(219, 153, 7), rgb(153, 127, 172));
+    border-radius: 15px;
+    border: white;
+    /* background-image: linear-gradient(to right, rgb(227, 90, 105), rgb(164, 9, 205));
+} */
+}
+
+#first {
+    font-size: 20px;
+}
+
+#userinput {
+    
+}
