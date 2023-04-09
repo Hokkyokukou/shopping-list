@@ -36,7 +36,7 @@ function myShoppingList() {
 	for (let i = 0; i < li.length; i++) {
 		li[i].addEventListener("click", toggleList);
 		addDeleteButton(li[i]);
-}
+	}
 	//function to add the 'line through' style
 	function toggleList() {
 		this.classList.toggle("done");
@@ -49,6 +49,7 @@ function myShoppingList() {
 	function addDeleteButton(parent) {
 		let button = parent.appendChild(document.createElement("button"));
 		button.appendChild(document.createTextNode("delete"));
+		button.id = "btn_delete";
 		button.onclick = removeList;
 	}
 }
