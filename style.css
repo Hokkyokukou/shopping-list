@@ -75,3 +75,8 @@ button {
     background-image: linear-gradient(to right, rgb(250, 106, 153), rgb(218, 103, 10));
     border-radius: 5px;
 }
+
+#saved_list {
+    color: black;
+    font-size: 20px;
+}
