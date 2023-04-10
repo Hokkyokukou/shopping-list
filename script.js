@@ -2,6 +2,7 @@ function myShoppingList() {
 	let button = document.getElementById("enter");
 	let input = document.getElementById("userinput");
 	let ul = document.querySelector("ul");
+	let btnClear = document.getElementById("clear");
 
 	function inputLength() {
 		return input.value.length;
@@ -27,7 +28,14 @@ function myShoppingList() {
 		}
 	}
 
+	function clearList() {
+		while (ul.firstChild) {
+			ul.removeChild(ul.firstChild);
+		}
+	}
+
 	button.addEventListener("click", addListAfterClick);
+	btnClear.addEventListener("click", clearList);
 
 	input.addEventListener("keypress", addListAfterKeypress);
 
