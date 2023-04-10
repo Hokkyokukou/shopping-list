@@ -30,7 +30,7 @@ ul {
     border-radius: 10px;
     padding: 25px;
     margin: 20px;
-    border: solid black 5px;
+    border: solid black 1px;
     font-size: 25px;
 }
 
@@ -60,9 +60,18 @@ body {
 }
 
 #userinput {
-    
+    color: orangered;
+    border: white ;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 17px;
 }
 
 #enter {
     margin: 5px;
+}
+
+button {
+    background-image: linear-gradient(to right, rgb(250, 106, 153), rgb(218, 103, 10));
+    border-radius: 5px;
 }
