@@ -24,7 +24,7 @@
 
 ul {
     list-style-type: none;
-    background-color: orange;
+    background-color: white;
     width: 50vh;
     height: 50vw;
     border-radius: 10px;
@@ -43,6 +43,7 @@ body {
     text-align: center;
     display: grid;
     place-items: center;
+    background-image: linear-gradient(to right, rgb(250, 106, 153), rgb(218, 103, 10));
 }
 
 #btn_delete {
