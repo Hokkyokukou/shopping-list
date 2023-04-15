@@ -1,14 +1,14 @@
-function myShoppingList() {
-	let button = document.getElementById("enter");
-	let input = document.getElementById("userinput");
-	let ul = document.querySelector("ul");
-	let btnClear = document.getElementById("clear");
+const myShoppingList = () => {
+	const button = document.getElementById("enter");
+	const input = document.getElementById("userinput");
+	const ul = document.querySelector("ul");
+	const btnClear = document.getElementById("clear");
 
-	function inputLength() {
+	const inputLength = () => {
 		return input.value.length;
 	}
 
-	function createListElement() {
+	const createListElement = () => {
 		let li = document.createElement("li");
 		li.appendChild(document.createTextNode(input.value));
 		addDeleteButton(li);
@@ -16,19 +16,19 @@ function myShoppingList() {
 		input.value = "";
 	}
 
-	function addListAfterClick() {
+	const addListAfterClick = () => {
 		if (inputLength() > 0) {
 			createListElement();
 		}
 	}
 
-	function addListAfterKeypress(event) {
+	const addListAfterKeypress = (event) => {
 		if (inputLength() > 0 && event.keyCode === 13) {
 			createListElement();
 		}
 	}
 
-	function clearList() {
+	const clearList = () => {
 		while (ul.firstChild) {
 			ul.removeChild(ul.firstChild);
 		}
@@ -60,7 +60,7 @@ function myShoppingList() {
 		button.onclick = removeList;
 	}
 
-	function updatedList(listValue) {
+	const updatedList = (listValue) => {
         const list = document.querySelector('#myList');
         list.textContent = listValue;
 		if (typeof listValue === 'object' && listValue !== null) {
@@ -71,7 +71,7 @@ function myShoppingList() {
 
     }
 
-	function loadListValue() {
+	const loadListValue = () => {
         const savedListValue = localStorage.getItem('myList');
 		if (savedListValue !== undefined) {
 			const parsedListValue = JSON.parse(savedListValue);
