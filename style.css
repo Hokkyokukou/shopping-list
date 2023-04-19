@@ -18,6 +18,10 @@
     -130px 20px 40px dimgrey;
 }
 
+.myTitle {
+    font-size: 40px;
+}
+
 .done {
     text-decoration: line-through;
 }
@@ -39,6 +43,7 @@ li {
 }
 
 body {
+    font-family: monospace;
     margin: 0 auto;
     text-align: center;
     display: grid;
@@ -48,9 +53,10 @@ body {
 
 #btn_delete {
     margin-left: 10px;
-    background-image: linear-gradient(to right, rgb(219, 153, 7), rgb(153, 127, 172));
+    background: white;
+    color: black;
     border-radius: 15px;
-    border: white;
+    border: orangered double;
     /* background-image: linear-gradient(to right, rgb(227, 90, 105), rgb(164, 9, 205));
 } */
 }
@@ -74,6 +80,7 @@ body {
 button {
     background-image: linear-gradient(to right, rgb(250, 106, 153), rgb(218, 103, 10));
     border-radius: 5px;
+    font-family: monospace;
 }
 
 #saved_list {
