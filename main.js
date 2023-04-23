@@ -3,6 +3,7 @@ const myShoppingList = () => {
     const input = document.getElementById('userinput');
     const ul = document.querySelector('ul');
     const btnClear = document.getElementById('clear');
+    const li = document.querySelectorAll('li');
 
     const inputLength = () => {
         return input.value.length;
@@ -38,12 +39,11 @@ const myShoppingList = () => {
     btnClear.addEventListener('click', clearList);
     input.addEventListener('keypress', addListAfterKeypress);
 
-    let li = document.getElementsByTagName('li');
+    li.forEach((element) => {
+        addDeleteButton(element);
+        element.addEventListener('click', toggleList); 
+    });
 
-    for (let i = 0; i < li.length; i++) {
-        li[i].addEventListener('click', toggleList);
-        addDeleteButton(li[i]);
-    }
     //function to add the 'line through' style
     function toggleList() {
         this.classList.toggle('done');
