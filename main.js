@@ -10,10 +10,10 @@ const myShoppingList = () => {
     };
 
     const createListElement = () => {
-        let li = document.createElement('li');
-        li.appendChild(document.createTextNode(input.value));
-        addDeleteButton(li);
-        ul.appendChild(li);
+        let createLi = document.createElement('li');
+        createLi.appendChild(document.createTextNode(input.value));
+        addDeleteButton(createLi);
+        ul.appendChild(createLi);
         input.value = '';
     };
 
@@ -39,26 +39,34 @@ const myShoppingList = () => {
     btnClear.addEventListener('click', clearList);
     input.addEventListener('keypress', addListAfterKeypress);
 
-    li.forEach((element) => {
-        addDeleteButton(element);
-        element.addEventListener('click', toggleList); 
-    });
-
-    //function to add the 'line through' style
-    function toggleList() {
-        this.classList.toggle('done');
-    }
-
-    function removeList() {
-        this.parentElement.remove();
-    }
-
-    function addDeleteButton(parent) {
+    const addDeleteButton = (parent) => {
         let button = parent.appendChild(document.createElement('button'));
         button.appendChild(document.createTextNode('delete'));
         button.id = 'btn_delete';
         button.onclick = removeList;
-    }
+    };
+
+    //function to add the 'line through' style
+    const toggleList = (element) => {
+        element.classList.toggle('done');
+    };
+
+    const removeList = (event) => {
+        if (event.target.tagName === 'BUTTON') {
+            event.target.parentElement.remove();
+        } else {
+            console.error('Error');
+        }
+    };
+
+    li.forEach((element) => {
+        addDeleteButton(element);
+        element.addEventListener('click', () => {
+            if (element !== undefined) {
+                toggleList(element);
+            }
+        });
+    });
 
     const updatedList = (listValue) => {
         const list = document.querySelector('#myList');
