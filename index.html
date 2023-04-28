@@ -4,28 +4,55 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Shopping List</title>
-		<!-- Font Awesome -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-		<!-- styles -->
+        <!-- Google Material Icons -->
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <!-- styles -->
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
         <h1 class="myTitle">Shopping List</h1>
-        <p id="first">Get it done today</p>
-        <input id="userinput" type="text" placeholder="Enter items" />
-        <button id="enter">Enter</button>
-        <ul id="myList">
-            <li class="bold red" random="23">Notebook</li>
-            <li>Jello</li>
-            <li>Spinach</li>
-            <li>Rice</li>
-            <li>Birthday Cake</li>
-            <li>Candles</li>
-        </ul>
-        <button id="load_button">Salve list</button>
-        <p id="saved_list"></p>
-        <button id="clear">Clear items</button>
-		<!-- Javascript -->
+        <p class="first">Get it done today</p>
+        <p class="first">Add a new one or find it on your list</p>
+        <div class="grid_container">
+            <div class="box_enter">
+                <input id="userinput" type="text" placeholder="Add items" />
+                <button id="enter"><i class="material-icons">add</i></button>
+            </div>
+
+            <div class="box_search">
+                <input id="userSearch" type="text" placeholder="search items" />
+                <button id="search">
+                    <i class="material-icons">search</i>
+                </button>
+            </div>
+        </div>
+        <div class="grid_list">
+            <ul id="myList">
+                <li class="bold red" random="23">Notebook</li>
+                <li>Jello</li>
+                <li>Spinach</li>
+                <li>Rice</li>
+                <li>Birthday Cake</li>
+                <li>Candles</li>
+            </ul>
+
+            <p id="saved_list"></p>
+        </div>
+        <div class="buttons">
+            <button id="load_button"><i class="material-icons">save</i></button>
+            <button id="clear"><i class="material-icons">clear</i></button>
+        </div>
+        <div>
+            <p></p>
+        </div>
+        <div>
+            <p></p>
+        </div>
+
+        <!-- Javascript -->
         <script type="text/javascript" src="main.js"></script>
     </body>
 </html>
