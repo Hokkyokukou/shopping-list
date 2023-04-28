@@ -3,7 +3,9 @@ const myShoppingList = () => {
     const input = document.getElementById('userinput');
     const ul = document.querySelector('ul');
     const btnClear = document.getElementById('clear');
-    const li = document.querySelectorAll('li');
+    const listItems = document.querySelectorAll('#myList li');
+    const search = document.getElementById('userSearch');
+    const btnSearch = document.getElementById('search');
 
     const inputLength = () => {
         return input.value.length;
@@ -29,15 +31,31 @@ const myShoppingList = () => {
         }
     };
 
+    const checkListFromItem = () => {
+        checkList(listItems, search.value);
+    };
+
     const clearList = () => {
         while (ul.firstChild) {
             ul.removeChild(ul.firstChild);
         }
     };
 
+    const checkList = (list, lookingFor) => {
+        for (let i = 0; i < list.length; i++) {
+            let itemText = list[i].firstChild.textContent;
+            if (itemText.toLowerCase() === lookingFor.toLowerCase()) {
+                return console.log(itemText);
+                // return `${lookingFor} is in your list`;
+            }
+        }
+        return 'that does not exist in your list';
+    };
+
     button.addEventListener('click', addListAfterClick);
     btnClear.addEventListener('click', clearList);
     input.addEventListener('keypress', addListAfterKeypress);
+    btnSearch.addEventListener('click', checkListFromItem);
 
     const addDeleteButton = (parent) => {
         let button = parent.appendChild(document.createElement('button'));
@@ -59,7 +77,7 @@ const myShoppingList = () => {
         }
     };
 
-    li.forEach((element) => {
+    listItems.forEach((element) => {
         addDeleteButton(element);
         element.addEventListener('click', () => {
             if (element !== undefined) {
