@@ -59,20 +59,23 @@ body {
 } */
 }
 
-#first {
+.first {
     font-size: 20px;
 }
 
-#userinput {
+#userinput, #userSearch {
     color: orangered;
     border: white;
     background-color: white;
     border-radius: 8px;
-    font-size: 17px;
+    font-size: 15px;
+    padding: 5px;
+    margin: 15px;
 }
 
-#enter {
-    margin: 5px;
+#enter, #search {
+    margin: 20px;
+
 }
 
 button {
@@ -83,11 +86,32 @@ button {
     );
     border-radius: 5px;
     font-family: monospace;
+    display: inline-block;
 }
 
 #saved_list {
     color: black;
-    font-size: 20px;
+    /* font-size: 20px; */
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.grid_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+}
+
+#myList {
+    grid-column: 1 / 3;
+}
+
+.buttons {
+    
 }
 
 /*responsive page*/
