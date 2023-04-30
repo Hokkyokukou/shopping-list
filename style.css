@@ -1,3 +1,13 @@
+:root {
+    --background-color: linear-gradient(
+        to right,
+        rgb(250, 106, 153),
+        rgb(218, 103, 10)
+    );
+
+    --font-family: monospace;
+}
+
 .coolTitle {
     text-align: center;
     font-family: 'Oswald', Helvetica, sans-serif;
@@ -37,16 +47,12 @@ li {
 }
 
 body {
-    font-family: monospace;
+    font-family: var(--font-family);
     margin: 0 auto;
     text-align: center;
     display: grid;
     place-items: center;
-    background-image: linear-gradient(
-        to right,
-        rgb(250, 106, 153),
-        rgb(218, 103, 10)
-    );
+    background-image: var(--background-color);
 }
 
 .rounded {
@@ -54,15 +60,11 @@ body {
 }
 
 .gradient {
-    background-image: linear-gradient(
-        to right,
-        rgb(250, 106, 153),
-        rgb(218, 103, 10)
-    );
+    background-image: var(--background-color);
 }
 
 .monospace {
-    font-family: monospace;
+    font-family: var(--font-family);
 }
 
 #btn_delete {
