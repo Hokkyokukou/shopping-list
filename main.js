@@ -13,7 +13,8 @@ const myShoppingList = () => {
 
     const createListElement = () => {
         let createLi = document.createElement('li');
-        createLi.appendChild(document.createTextNode(input.value));
+        let capitalizedValue = input.value.charAt(0).toUpperCase() + input.value.slice(1);
+        createLi.appendChild(document.createTextNode(capitalizedValue));
         addDeleteButton(createLi);
         ul.appendChild(createLi);
         input.value = '';
@@ -33,6 +34,7 @@ const myShoppingList = () => {
     };
 
     const checkListFromItem = () => {
+        const listItems = document.querySelectorAll('#myList li');//update listItems
         checkList(listItems, search.value);
     };
 
@@ -46,11 +48,11 @@ const myShoppingList = () => {
         for (let i = 0; i < list.length; i++) {
             let itemText = list[i].firstChild.textContent;
             if (itemText.toLowerCase() === lookingFor.toLowerCase()) {
-                return console.log(itemText);
-                // return `${lookingFor} is in your list`;
+                document.querySelector('#searchResult').textContent = `${lookingFor} is in your list`;
+                return;
             }
         }
-        return 'that does not exist in your list';
+        document.querySelector('#searchResult').textContent = `${lookingFor} does not exist in your list`;
     };
 
     button.addEventListener('click', addListAfterClick);
