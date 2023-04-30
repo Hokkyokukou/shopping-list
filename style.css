@@ -151,4 +151,23 @@ button {
     body {
         font-size: 20px;
     }
+    ul {
+        width: 90%;
+        margin: 10px auto;
+    }
+    .buttons {
+        position: fixed;
+        right: 20%;
+        bottom: 25%;
+    }
+
+    li {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
