@@ -17,6 +17,7 @@ const myShoppingList = () => {
         addDeleteButton(createLi);
         ul.appendChild(createLi);
         input.value = '';
+        updatedList();
     };
 
     const addListAfterClick = () => {
@@ -72,6 +73,7 @@ const myShoppingList = () => {
     const removeList = (event) => {
         if (event.target.tagName === 'BUTTON') {
             event.target.parentElement.remove();
+            updatedList();
         } else {
             console.error('Error');
         }
@@ -86,25 +88,30 @@ const myShoppingList = () => {
         });
     });
 
-    const updatedList = (listValue) => {
-        const list = document.querySelector('#myList');
-        list.textContent = listValue;
-        if (typeof listValue === 'object' && listValue !== null) {
-            localStorage.setItem('myList', JSON.stringify(listValue));
-        } else {
-            console.error('Invalid JSON string');
-        }
+    const updatedList = () => {
+        const listItems = document.querySelectorAll('#myList li');
+        const listValues = Array.from(listItems).map(item => item.firstChild.textContent);
+        localStorage.setItem('myList', JSON.stringify(listValues));
     };
 
     const loadListValue = () => {
         const savedListValue = localStorage.getItem('myList');
-        if (savedListValue !== undefined) {
+        if (savedListValue) {
             const parsedListValue = JSON.parse(savedListValue);
-            document.querySelector('#myList').textContent = parsedListValue;
-            document.querySelector('#saved_list').textContent = 'saved list';
-        } else {
-            console.error('Invalid JSON string');
-        }
+
+            const list = document.querySelector('#myList');
+
+            while (list.firstChild) {
+                list.removeChild(list.firstChild);
+            }
+
+            parsedListValue.forEach(value => {
+                let createLi = document.createElement('li');
+                createLi.appendChild(document.createTextNode(value));
+                addDeleteButton(createLi);
+                list.appendChild(createLi);
+            });
+        } 
     };
 
     const loadButton = document.querySelector('#load_button');
@@ -113,5 +120,6 @@ const myShoppingList = () => {
         const listValue = document.querySelector('#myList').value;
         updatedList(listValue);
     });
+    window.onload = loadListValue;
 };
 myShoppingList();
