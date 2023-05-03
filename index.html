@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="shopping list" />
+        <meta name="keywords" content="todo list shopping list" />
         <title>Shopping List</title>
         <!-- Google Material Icons -->
         <link
@@ -13,47 +15,74 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
-        <h1 class="myTitle">Shopping List</h1>
-        <p class="first">Get it done today</p>
-        <p class="first">Add a new one or find it on your list</p>
-        <div class="grid_container">
-            <div class="box_enter">
-                <input id="userinput" type="text" placeholder="Add items" />
-                <button class="rounded monospace gradient" id="enter">
-                    <i class="material-icons">add</i>
-                </button>
-            </div>
+        <header>
+            <h1 class="myTitle">Shopping List</h1>
+        </header>
 
-            <div class="box_search">
-                <input id="userSearch" type="text" placeholder="search items" />
-                <button class="rounded monospace gradient" id="search">
-                    <i class="material-icons">search</i>
-                </button>
-            </div>
-        </div>
-        <div class="grid_list">
-            <ul id="myList">
-                <li class="bold red" random="23">Notebook</li>
-                <li>Jello</li>
-                <li>Spinach</li>
-                <li>Rice</li>
-                <li>Birthday Cake</li>
-                <li>Candles</li>
-            </ul>
+        <main>
+            <section>
+                <p class="first">Get it done today</p>
+                <p class="first">Add a new one or find it on your list</p>
+            </section>
 
-            <p id="saved_list"></p>
-        </div>
-        <div class="searchResult">
-            <p id="searchResult"></p>
-        </div>
-        <div class="buttons">
-            <button class="rounded monospace gradient" id="load_button">
-                <i class="material-icons">save</i>
-            </button>
-            <button class="rounded monospace gradient" id="clear">
-                <i class="material-icons">clear</i>
-            </button>
-        </div>
+            <section>
+                <div class="grid_container">
+                    <div class="box_enter">
+                        <input
+                            id="userinput"
+                            type="text"
+                            placeholder="Add items"
+                        />
+                        <button class="rounded monospace gradient" id="enter">
+                            <i class="material-icons">add</i>
+                        </button>
+                    </div>
+
+                    <div class="box_search">
+                        <input
+                            id="userSearch"
+                            type="text"
+                            placeholder="search items"
+                        />
+                        <button class="rounded monospace gradient" id="search">
+                            <i class="material-icons">search</i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="grid_list">
+                    <ul id="myList">
+                        <li class="bold red" random="23">Notebook</li>
+                        <li>Jello</li>
+                        <li>Spinach</li>
+                        <li>Rice</li>
+                        <li>Birthday Cake</li>
+                        <li>Candles</li>
+                    </ul>
+
+                    <p id="saved_list"></p>
+                </div>
+            </section>
+
+            <section>
+                <div class="searchResult">
+                    <p id="searchResult"></p>
+                </div>
+            </section>
+
+            <section>
+                <div class="buttons">
+                    <button class="rounded monospace gradient" id="load_button">
+                        <i class="material-icons">save</i>
+                    </button>
+                    <button class="rounded monospace gradient" id="clear">
+                        <i class="material-icons">clear</i>
+                    </button>
+                </div>
+            </section>
+        </main>
 
         <!-- Javascript -->
         <script type="text/javascript" src="main.js"></script>
