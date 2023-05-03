@@ -13,7 +13,8 @@ const myShoppingList = () => {
 
     const createListElement = () => {
         let createLi = document.createElement('li');
-        let capitalizedValue = input.value.charAt(0).toUpperCase() + input.value.slice(1);
+        let capitalizedValue =
+            input.value.charAt(0).toUpperCase() + input.value.slice(1);
         createLi.appendChild(document.createTextNode(capitalizedValue));
         addDeleteButton(createLi);
         ul.appendChild(createLi);
@@ -34,7 +35,7 @@ const myShoppingList = () => {
     };
 
     const checkListFromItem = () => {
-        const listItems = document.querySelectorAll('#myList li');//update listItems
+        const listItems = document.querySelectorAll('#myList li'); //update listItems
         checkList(listItems, search.value);
     };
 
@@ -48,11 +49,15 @@ const myShoppingList = () => {
         for (let i = 0; i < list.length; i++) {
             let itemText = list[i].firstChild.textContent;
             if (itemText.toLowerCase() === lookingFor.toLowerCase()) {
-                document.querySelector('#searchResult').textContent = `${lookingFor} is in your list`;
+                document.querySelector(
+                    '#searchResult'
+                ).textContent = `${lookingFor} is in your list`;
                 return;
             }
         }
-        document.querySelector('#searchResult').textContent = `${lookingFor} does not exist in your list`;
+        document.querySelector(
+            '#searchResult'
+        ).textContent = `${lookingFor} does not exist in your list`;
     };
 
     button.addEventListener('click', addListAfterClick);
@@ -92,7 +97,9 @@ const myShoppingList = () => {
 
     const updatedList = () => {
         const listItems = document.querySelectorAll('#myList li');
-        const listValues = Array.from(listItems).map(item => item.firstChild.textContent);
+        const listValues = Array.from(listItems).map(
+            (item) => item.firstChild.textContent
+        );
         localStorage.setItem('myList', JSON.stringify(listValues));
     };
 
@@ -107,13 +114,13 @@ const myShoppingList = () => {
                 list.removeChild(list.firstChild);
             }
 
-            parsedListValue.forEach(value => {
+            parsedListValue.forEach((value) => {
                 let createLi = document.createElement('li');
                 createLi.appendChild(document.createTextNode(value));
                 addDeleteButton(createLi);
                 list.appendChild(createLi);
             });
-        } 
+        }
     };
 
     const loadButton = document.querySelector('#load_button');
