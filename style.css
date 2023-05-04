@@ -44,6 +44,13 @@ ul {
 
 li {
     padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 body {
@@ -148,28 +155,38 @@ button {
     }
 }
 
-/* Stile per schermi di larghezza superiore a 1008 pixel */
 @media screen and (min-width: 1008px) {
     body {
         font-size: 20px;
     }
     ul {
-        width: 90%;
+        width: 50%;
+        height: 90%;
         margin: 10px auto;
     }
-    .buttons {
-        position: fixed;
-        right: 20%;
-        bottom: 25%;
-    }
+    
+}
 
-    li {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+/* Stile per schermi di larghezza superiore a 1008 pixel */
+@media screen and (max-width: 1008px) {
+    body {
+        font-size: 20px;
     }
+    ul {
+        width: 50%;
+        height: 80%;
+        margin: 10px auto;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    body {
+        font-size: 20px;
+    }
+    ul {
+        width: 80%;
+        height: 80%;
+        margin: 10px auto;
+    }
+    
 }
